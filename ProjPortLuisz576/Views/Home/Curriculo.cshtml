@@ -1,0 +1,50 @@
+@model List<ItemCurriculo>
+@{
+    ViewData["Title"] = "Curriculo";
+}
+<!--CURRICULO-->
+<section class="container">
+    @if(Model != null){
+        @if(Model.Count > 0){
+            <h2 class="curriculo-title">Curriculo</h2>
+            <div class="curriculo-conteudo">
+                @foreach(ItemCurriculo item in Model){
+                    <div class="curriculo-part">
+                        <div class="grid-1-2 align-right">
+                            <h3>@item.titulo</h3>
+                        </div>
+                        <div class="grid-1-2 curriculo-part-conteudo">
+                            <span>@item.texto @if(ViewBag.logged){ <a href="~/Home/RemoverItemCurriculo?id=@item.id">REMOVER</a> }</span>
+                        </div>
+                    </div>
+                }
+                @if(ViewBag.logged){
+                    <div class="curriculo-part">
+                        <div class="grid-1-2 align-right">
+                            <h3>Novo Item do curriculo</h3>
+                        </div>
+                        <div class="grid-1-2 curriculo-part-conteudo">
+                            <span>Click <u><a asp-controller="Home" asp-action="NovoItemCurriculo">aqui</a></u> para adicionar!</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        }else{
+            <h2 class="curriculo-title">Curriculo indisponivel :(</h2>
+            <div class="curriculo-conteudo">
+            @if(ViewBag.logged){
+                <div class="curriculo-part">
+                    <div class="grid-1-2 align-right">
+                        <h3>Novo Item do curriculo</h3>
+                    </div>
+                    <div class="grid-1-2 curriculo-part-conteudo">
+                        <span>Click <u><a asp-controller="Home" asp-action="NovoItemCurriculo">aqui</a></u> para adicionar!</span>
+                    </div>
+                </div>
+            }
+            </div>
+        }
+    }else{
+        <h2 class="curriculo-title">Curriculo indisponivel :(</h2>
+    }
+</section>

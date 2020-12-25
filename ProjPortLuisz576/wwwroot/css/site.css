@@ -1,0 +1,419 @@
+*{
+    font-weight: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: #dbdbdb;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+footer ul, footer ul li{
+    list-style: none;
+    color: white;
+}
+footer ul li{
+    color: white;
+}
+.margin-left{
+    margin-left: 20px;
+}
+/*PALETA*/
+.color-green{
+    color: #43c67b;
+}
+.color-blue{
+    color: #1263ac;
+}
+.color-pink{
+    color: #d8353a;
+}
+/*Cabeçalho*/
+.header-expands{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 70px;
+    margin: 0 auto;
+    left: 0;
+    color: #fff;
+}
+.header-title{
+    margin-top: 10px;
+}
+.header-title h1 a{
+    font-size: 42px;
+    color: #fff;
+}
+.header-title h1 a:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.header-title h1 a:after{
+    content: " ";
+    display: table;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.8s ease-in-out 0s;
+}
+.header-title h1 a:hover:after{
+    width: 120px;
+    transition: all 0.8s ease-in-out 0s;
+}
+.header-pages{
+    padding-top: 25px;
+}
+.header-pages a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    margin-right: 20px;
+    color: #fff;
+}
+.header-pages a:hover{
+    font-weight: bold;
+    animation-duration: 700ms;
+    font-size: 20px;
+    animation-name: font18to20px;
+    cursor: pointer;
+}
+.selected a{
+    font-weight: 600;
+    font-size: 20px;
+}
+.selected a:hover{
+    animation-duration: unset;
+    animation-name: none;
+}
+/*Blog*/
+.conteudo-blog a{
+    color: #1263ac;
+}
+.conteudo-blog a:hover{
+    color: #0e4270;
+}
+.conteudo-blog video{
+    width: 100%;
+}
+/*Redes sociais*/
+.redes-sociais{
+    margin-bottom: 20px;
+}
+.redes-sociais-title{
+    font-size: 22px;
+    font-weight: bold;
+    float: left;
+    padding-top: 20px;
+}
+.redes-sociais-title h2:after{
+    content: " ";
+    display: table;
+    width: 240px;
+    height: 2px;
+    background-color: black;
+}
+.redes-sociais ul li{
+    list-style: none;
+    display: inline-block;
+}
+.redes-sociais ul li img{
+    height: 60px;
+    width: 60px;
+}
+.redes-sociais ul li img:hover{
+    height: 64px;
+    width: 64px;
+    margin: -2px -2px;
+}
+.redes-sociais-icones{
+    text-align: right;
+}
+/*Sobre mim*/
+.sobre-mim .sobre-mim-title{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #1c2834;
+    border: black solid 8px;
+}
+.sobre-mim-title h2{
+    padding: 10px;
+    color: white;
+}
+.sobre-mim-code{
+    margin-top: -30px;
+}
+.sobre-mim .sobre-mim-code{
+    background-color: #12202f;
+    font-size: 20px;
+}
+.sobre-mim-code p{
+    margin-top: 10px;
+    padding: 16px;
+    border: black solid 8px;
+}
+/*CARDS*/
+.card{
+    background-color: #1c2834;
+    color: #fff;
+    width: 18rem;
+}
+.card img{
+    position: relative;
+    width: 100%;
+    height: 225px;
+}
+/*CHECKS*/
+.form-check-input:checked{
+    background-color: #000;
+}
+/*Redirect-Orçamento*/
+.redirect-orcamento{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.redirect-orcamento h2{
+  padding-left: 8%;
+  padding-bottom: 16px;
+  font-size: 28px;
+}
+.redirect-orcamento h2 a{
+  margin-bottom: 24px;
+}
+.redirect-orcamento h2 a:hover{
+  color: #000;
+  text-decoration: none;
+  animation-duration: 0.8s;
+  animation-name: font28to32px;
+  font-size: 32px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.redirect-orcamento h2:after{
+  content: " ";
+  display: table;
+  width: 180px;
+  height: 2px;
+  background-color: black;
+  transition: all 0.8s ease-in-out 0s;
+}
+.redirect-orcamento h2:hover:after{
+  content: " ";
+  display: table;
+  width: 260px;
+  height: 2px;
+  background-color: black;
+  transition: all 0.8s ease-in-out 0s;
+}
+/*ORCAMENTO ENVIADO*/
+.page-orcamentos-enviados h3 a{
+  font-weight: bold;
+}
+.view-orcamento a{
+  font-weight: bold;
+}
+.box-view{
+  width: 500px;
+}
+/*Orçamento page*/
+.orcamento-page h3{
+    font-size: 32px;
+}
+.orcamento-page h3:after{
+    content: " ";
+    width: 250px;
+    height: 2px;
+    background-color: #000;
+    display: table;
+}
+.orcamento-page input{
+    transition: transform .2s;
+}
+.orcamento-page input:hover{
+    transform: scale(1.2);
+}
+.orcamento-enviado a{
+    font-size: 16px;
+    text-decoration-line: none;
+}
+.orcamento-enviado a:hover{
+    font-size: 18px;
+    text-decoration-line: underline;
+}
+/*Curriculo*/
+.curriculo-title{
+    font-size: 32px;
+}
+.curriculo-title:after{
+    width: 90px;
+    content: " ";
+    display: table;
+    height: 2px;
+    background-color: #1c2834;
+}
+.curriculo-conteudo h3{
+    font-size: 32px;
+    font-weight: bold;
+    color: #1c2834;
+}
+.curriculo-conteudo h3:after{
+    width: 30%;
+    content: " ";
+    display: table;
+    height: 2px;
+    background-color: #1c2834;
+    position: relative;
+}
+.curriculo-conteudo h3:hover:after{
+    transition: all 0.6s ease-in-out 0s;
+    width: 40%;
+}
+.curriculo-conteudo span{
+    color: #12202f;
+}
+.curriculo-part{
+    margin: 50px 0;
+}
+.curriculo-part-conteudo{
+    border-left: #000 solid 1px;
+    padding-left: 10px;
+    margin-top: 32px;
+}
+/*Footer*/
+footer{
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    height: 70px;
+    color: white;
+    padding-top: 16px;
+}
+.footer-title{
+    margin-top: 8px;
+}
+.footer-title h2{
+    font-size: 20px;
+}
+.footer-link a{
+    font-size: 16px;
+    text-decoration: none;
+    text-decoration: underline;
+    color: white;
+}
+.footer-link a:hover{
+    font-weight: bold;
+}
+/*RESPONSIVIDADE*/
+@media(max-width: 992px){
+    /*CARDS*/
+    .card{
+        width: 13rem;
+    }
+    .card img{
+        height: 145px;
+    }
+    .card h5{
+        font-size: 16px;
+    }
+    .card p{
+        font-size: 12px;
+    }
+}
+@media(max-width: 768px){
+    .header-title h1{
+        margin-top: 8px;
+    }
+    .header-title h1 a{
+        font-size: 30px;
+    }
+    .header-pages a{
+        margin-right: 10px;
+    }
+    /*REDES*/
+    .redes-sociais ul li img{
+        height: 40px;
+        width: 40px;
+    }
+    .redes-sociais ul li img:hover{
+        height: 42px;
+        width: 42px;
+        margin: -1px -1px;
+    }
+    /*CARD*/
+    .card{
+        width: 20rem;
+        margin: 0 auto;
+    }
+    .card img{
+        height: 240px;
+    }
+    .card h5{
+        font-size: 24px;
+    }
+    .card p{
+        font-size: 16px;
+    }
+}
+@media(max-width: 576px){
+    .header-title h1 a:hover:after{
+        width: 90px;
+    }
+    .header-pages a{
+        font-size: 16px;
+        margin-right: 10px;
+    }
+}
+@media(max-width: 412px){
+    .header-title h1 a:hover:after{
+        width: 70px;
+    }
+    .header-pages a:hover{
+        font-size: 16px;
+        animation-name: font13to16px;
+    }
+    .header-title h1 a{
+        font-size: 24px;
+    }
+    .header-pages a{
+        font-size: 12px;
+        margin-right: 4px;
+    }
+    .footer-title{
+        margin-top: 4px;
+    }
+    .footer-title h2{
+        font-size: 10px;
+    }
+    .footer-fix li{
+        font-size: 12px;
+    }
+}
+/*Animations*/
+@keyframes font13to16px{
+    from {
+        font-size: 13px;
+    }
+    to {
+        font-size: 16px;
+    }
+}
+@keyframes font18to20px{
+    from {
+        font-size: 18px;
+    }
+    to {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="shortcut icon" href="~/img/icones/my-logo.png"/>
+</head>
+<body>
+    <!--Cabeçalho-->
+    <header class="header-expands">
+        <div class="container">
+            <div class="row">
+                <div class="header-title col-2 col-md-4 col-lg-6 col-xl-7"><h1><a asp-controller="Home" asp-action="Index">Luisz576</a></h1></div>
+                <div class="header-pages col-10 col-md-8 col-lg-6 col-xl-5">
+                    <ul>
+                        <a asp-controller="Home" asp-action="Index">Home</a>
+                        <a asp-controller="Orcamento" asp-action="Index">Orcamento</a>
+                        <a asp-controller="Home" asp-action="Portfolio">Portfólio</a>
+                        <a asp-controller="Home" asp-action="Curriculo">Curriculo</a>
+                        <a asp-controller="Home" asp-action="Blog">Blog</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main role="main" class="all-page" style="margin-top: 80px;">
+        @RenderBody()
+        <div style="margin-top: 80px;"></div>
+    </main>
+    <!--Footer & contato-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-title col-3 col-sm-5 col-md-7">
+                    <h2>Luisz576 &copy;2020 - Alguns direitos reservados</h2>
+                </div>
+                <div class="footer-fix col-5 col-sm-4 col-md-3">
+                    <ul>
+                        <li>Contato:</li>
+                        <li>luisz576oficial@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-fix col-4 col-md-2">
+                    <ul>
+                        <li>Youtube:</li>
+                        <li class="footer-link"><a target="_blank" href="https://www.youtube.com/channel/UCI_NylhJdIz10I8uIrhfWSw">Luisz576_</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

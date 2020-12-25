@@ -1,0 +1,42 @@
+@model List<BlogItem>
+@{
+    ViewData["Title"] = "Blog";
+}
+<!--BLOG-->
+<section class="container">
+    <h2>MyBlog.exe</h2>
+    @if(Model != null){
+        @if(Model.Count > 0){
+            @foreach (BlogItem blog in Model)
+            {
+                <div class="card" style="width: 100%; margin-bottom: 20px;">
+                    <div class="card-body">
+                        <h5 class="card-title">@blog.titulo @if(ViewBag.logged){ <a href="~/Home/EditarBlogPost?id=@blog.id" style="color: #fff;"> - EDITAR</a> <a href="~/Home/RemovePostBlog?id=@blog.id" style="color: #fff;"> - REMOVE</a> }</h5>
+                        <p class="card-text conteudo-blog">@Html.Raw(blog.conteudo)</p>
+                    </div>
+                </div>
+            }
+            <div class="grid-16">
+                @if(ViewBag.previousPage > 0){
+                    <a href="~/Home/Blog?page=@ViewBag.previousPage"><button type="button" class="btn btn-dark">Anterior</button></a>
+                }else{
+                    <button type="button" class="btn btn-dark" disabled>Anterior</button>
+                }
+                @if(ViewBag.nextPage > 1){
+                    <a href="~/Home/Blog?page=@ViewBag.nextPage"><button type="button" class="btn btn-dark">Próximo</button></a>
+                }else{
+                    <button type="button" class="btn btn-dark" disabled>Próximo</button>
+                }
+            </div>
+        }else{
+            <h2>Nenhum post encontrado :(</h2>
+        }
+    }else{
+        <h2>Blog indisponivel no momento :(</h2>
+    }
+    @if(ViewBag.logged){
+        <div class="grid-16" style="height: 20px; margin-bottom: 80px;">
+            <a asp-controller="Home" asp-action="NovoPostBlog"><button type="button" class="btn btn-primary">Novo Post</button></a>
+        </div>
+    }
+</section>

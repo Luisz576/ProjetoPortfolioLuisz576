@@ -1,0 +1,60 @@
+@model OrcamentoPedido
+@{
+    ViewData["Title"] = "Orçamento";
+}
+
+<!--Orçamento page-->
+<section class="orcamento-page container">
+    <div class="row"><h2 class="col-12">Peça já seu orçamento!</h2></div>
+    @if(ViewBag.error){
+        <p>Não foi possível enviar o orçamento :(</p>
+    }
+    <form method="POST">
+        <p>
+            <label asp-for="nome">Nome:</label>
+            <input type="text" maxlength="30" asp-for="nome" required>
+        </p>
+        <p>
+            <label asp-for="telefone">Telefone:</label>
+            <input type="text" maxlength="15" asp-for="telefone" required>
+        </p>
+        <p>
+            <label asp-for="email">Email:</label>
+            <input type="email" asp-for="email" maxlength="50" required>
+        </p>
+        <p>
+            Plataforma(s):
+        </p>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="android">
+            <label class="form-check-label" asp-for="android">
+                Android
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="ios">
+            <label class="form-check-label" asp-for="ios">
+                iOS
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="web">
+            <label class="form-check-label" asp-for="web">
+                Web
+            </label>
+        </div>
+        <p>
+            <label asp-for="descricao">Conte-me um pouco sobre seu projeto:</label>
+        </p>
+        <p>
+            <textarea asp-for="descricao" rows="10" cols="50" required></textarea>
+        </p>
+        <p>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+            <button type="submit" class="btn btn-secondary">Mandar</button>
+        </p>
+    </form>
+    @if(ViewBag.logged == true){
+        <p><a asp-controller="Orcamento" asp-action="OrcamentosEnviados">Orçamentos</a></p>
+    }
+</section>

@@ -1,0 +1,19 @@
+@model User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="margin-left">
+    <h2>Login:</h2>
+    <form method="POST">
+        <p>
+            <label asp-for="login">Usuario:</label>
+            <input asp-for="login" required>
+        </p>
+        <p>
+            <label asp-for="senha">Senha:</label>
+            <input asp-for="senha" required>
+        </p>
+        <button type="submit" class="btn btn-dark">Login</button>
+    </form>
+</section>

@@ -1,0 +1,19 @@
+@model BlogItem
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<section class="margin-left container">
+    <form method="POST">
+        <p>
+            <label asp-for="titulo">Titulo do post:</label>
+            <input asp-for="titulo" maxlength="35" required>
+        </p>
+        <div class="form-floating" style="margin-bottom: 20px;">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" asp-for="conteudo" cols="50" rows="10" required></textarea>
+            <label for="floatingTextarea2">Conteudo</label>
+        </div>
+        <button type="submit" class="btn btn-light">Postar</button>
+        <p><a asp-controller="Home" asp-action="Blog">Voltar</a></p>
+    </form>
+</section>

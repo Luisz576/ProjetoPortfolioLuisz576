@@ -1,0 +1,44 @@
+@model List<OrcamentoPedido>
+@{
+    ViewData["Title"] = "Orçamentos";
+}
+
+<section class="margin-left container">
+    @if(Model != null){
+        @if(Model.Count() > 0){
+            <h2>Todos os orçamentos:</h2>
+            <div class="orcamentos">
+                <table class="table">
+                    <tbody>
+                        @foreach(OrcamentoPedido orcamento in Model){
+                            @if(orcamento.lido){
+                                <tr class="table-primary">
+                                    <td>
+                                        <p> 
+                                            <span>✔</span>@orcamento.nome
+                                        </p>
+                                    </td>
+                                    <td><a href="~/Orcamento/OrcamentoView?id=@orcamento.id">Visualizar</a></td>
+                                </tr>
+                            }else{
+                                <tr class="table-danger">
+                                    <td>
+                                        <p> 
+                                            <span>✖</span>@orcamento.nome
+                                        </p>
+                                    </td>
+                                    <td><a href="~/Orcamento/OrcamentoView?id=@orcamento.id">Visualizar</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <p><a asp-controller="Home" asp-action="Index">Voltar</a></p>
+        }else{
+            <h2>Nenhum pedido de orçamento encontrado!</h2>
+        }
+    }else{
+        <h2>Erro ao buscar orçamentos!</h2>
+    }
+</section>

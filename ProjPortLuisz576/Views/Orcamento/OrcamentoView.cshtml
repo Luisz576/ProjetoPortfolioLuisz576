@@ -1,0 +1,21 @@
+@model OrcamentoPedido
+@{
+    ViewData["Title"] = "Orçamentos";
+}
+
+<section class="view-orcamento margin-left">
+    <h2>Nome: @Model.nome</h2>
+    <h3>Contato: @Model.email - @Model.telefone</h3>
+    <h3>Porpriedades:</h3>
+    <span>
+        iOs @if(Model.ios){ <span>✔</span> }else{ <span>✖</span> }<br>
+        Android @if(Model.android){ <span>✔</span> }else{ <span>✖</span> }<br>
+        Web @if(Model.web){ <span>✔</span> }else{ <span>✖</span> }<br>
+    </span>
+    <h3>Descrição:</h3>
+    <p class="box-view">@Model.descricao</p>
+    @if(!Model.lido){
+        <p>Marcar como <a href="~/Orcamento/OrcamentoLido?id=@Model.id">✔</a></p>
+    }
+    <p><a asp-controller="Orcamento" asp-action="TodosOrcamentos">Todos os orcamentos</a></p>
+</section>

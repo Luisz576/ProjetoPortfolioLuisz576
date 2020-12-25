@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3SF2QU8ebWbNL23n0SNGmOuGNZ96r1UTCpT6POs1GbyKtyehfceJ34rT4kbM3pUrkIeRN6WaL/M+4QvmMlVmyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lrfer\\OneDrive\\Documentos\\Luiz Ricardo Ferlin Alves\\Tecnico\\Módulo II\\Projeto Integrador\\Etapa 5\\Etapa 3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lrfer\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

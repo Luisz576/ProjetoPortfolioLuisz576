@@ -1,0 +1,19 @@
+@model ItemCurriculo
+@{
+    ViewData["Title"] = "Curriculo";
+}
+
+<section class="margin-left container">
+    <h2>Novo item do curriculo:</h2>
+    <form method="POST">
+        <p>
+            <label asp-for="titulo">Titulo:</label>
+            <input asp-for="titulo" required>
+        </p>
+        <div class="form-floating" style="margin-bottom: 20px;">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" asp-for="texto" required></textarea>
+            <label for="floatingTextarea2">Conteudo</label>
+        </div>
+        <button type="submit" class="btn btn-light">Adicionar</button>
+    </form>
+</section>

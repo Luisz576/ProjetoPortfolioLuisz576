@@ -1,0 +1,21 @@
+@model Projeto
+@{
+    ViewData["Title"] = "Projeto";
+}
+
+<section class="margin-left">
+    <h2>Novo Projeto:</h2>
+    <form method="POST">
+        <p><label asp-for="nome">Nome:</label></p>
+        <p><input asp-for="nome" maxlength="30" required></p>
+        <p><label asp-for="descricao">Descrição:</label></p>
+        <p><textarea asp-for="descricao" required></textarea></p>
+        <p><label asp-for="imagem">Imagem:</label></p>
+        <p><input asp-for="imagem" required></p>
+        <p><label asp-for="alternativo">Alternativo:</label></p>
+        <p><textarea asp-for="alternativo" required></textarea></p>
+        <p><label asp-for="url_project">Url do projeto:</label></p>
+        <p><textarea asp-for="url_project" required></textarea></p>
+        <button type="submit" class="btn btn-light">Adicionar</button>
+    </form>
+</section>

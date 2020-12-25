@@ -1,0 +1,76 @@
+﻿@model List<Projeto>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!--Redes Sociais-->
+<section class="redes-sociais">
+    <div class="container">
+        <div class="row">
+            <div class="redes-sociais-title col-6">
+                <h2>Luiz Ricardo F. Alves</h2>
+            </div>
+            <div class="redes-sociais-icones col-6">
+                <ul>
+                    <li><a target="_blank" href="https://www.facebook.com/luizricardo.alvesferlin"><img src="http://localhost:5000/img/icones/logo-facebook.png" class="zoom-rede-social" alt="facebook"/></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/luisz576/"><img src="http://localhost:5000/img/icones/logo-instagram.png" class="zoom-rede-social" alt="instagram"/></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/luiz-r-f-alves-30702419b/"><img src="http://localhost:5000/img/icones/logo-linkin.png" class="zoom-rede-social" alt="linked-in"/></a></li>
+                    <li><a target="_blank" href="https://www.youtube.com/channel/UCI_NylhJdIz10I8uIrhfWSw"><img src="http://localhost:5000/img/icones/logo-youtube.png" class="zoom-rede-social" alt="youtube"/></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Sobre mim-->
+<section class="sobre-mim container">
+    <div class="sobre-mim-title">
+        <h2>Sobre_mim.person <i>is running...</i></h2>
+    </div>
+    <div class="sobre-mim-code">
+        <p class="color-blue">@Html.Raw(ViewBag.text_about_me)</p>
+    </div>
+    <div >
+        <p>
+            <a href="~/Home/Index?lang=0"><button type="button" class="btn btn-dark">Português</button></a>
+            <a href="~/Home/Index?lang=1"><button type="button" class="btn btn-dark">English</button></a>
+        </p>
+    </div>
+</section>
+
+<section class="container">
+    @if(Model != null){
+        @if(Model.Count > 0){
+            <h2>Projetos</h2>
+            <div class="row projetos-container" style="margin-bottom: 20px;">
+                @{ int count = 0; }
+                @foreach(Projeto projeto in Model){
+                    @if(count < 3){
+                        <div class="col-12 col-md">
+                            <div class="card" style="margin-bottom: 20px;">
+                                <img src="~/img/prints/@projeto.imagem" class="card-img-top" alt="@projeto.alternativo">
+                                <div class="card-body">
+                                    <h5 class="card-title">@projeto.nome</h5>
+                                    <p class="card-text">@projeto.descricao</p>
+                                    <a href="@projeto.url_project" class="btn btn-primary">Ver projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                        count++;
+                    }
+                }
+            </div>
+        }else{
+            <h2>Sem projetos disponíveis no momento</h2>
+        }
+    }else{
+        <h2>Sem projetos disponíveis no momento</h2>
+    }
+</section>
+<span class="status-3"></span>
+
+<!--REDIRECIONAMENTO ORÇAMENTO-->
+<section class="redirect-orcamento">
+    <div class="grid-16">
+        <h2><a asp-area="" asp-controller="Orcamento" asp-action="Index">Peça seu orçamento aqui!</a></h2>
+    </div>
+</section>
